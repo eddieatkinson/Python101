@@ -1,3 +1,4 @@
+# Guess the number. You get 5 tries.
 import random
 my_random_number = random.randint(1,10)
 guess = 11

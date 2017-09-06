@@ -1,3 +1,4 @@
+# Guess the number! Gives clues as to whether the guess is too high or too low.
 secret_number = 5
 guess = 2
 print "I'm thinking of a number between 1 and 10."

@@ -22,7 +22,7 @@ while my_random_number != guess and count >= 0:
 			print "Bye!"
 		else:
 			print "Great!"
-			count = 6 # Sets the count at one above the number of guesses
+			count = 6 # Sets count 1 above num guesses, to be decremented ln 28
 			guess = 11 # Resets the guess out of range
 			my_random_number = random.randint(1,10) # Creates a new random number
 	count = count - 1
