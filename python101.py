@@ -65,3 +65,35 @@ print "Your name is %s" % name
 print "What is your age?"
 age = int(raw_input(">"))
 print "Your age is %d" % age
+
+# CONDITIONALS
+# == - compare left and right
+# === - compare left and right AS WELL AS data type
+# 16 == "16" 	True
+# 16 === "16"	False
+if(16 == 16):
+	print "True"
+if(16 == "16"):
+	print "False"
+#if(16 == "16"): # same
+#	print "False"
+
+if(1 == 2):
+	print "True"
+
+if(1==2):
+	print "True!"
+elif(2 == 2):
+	print "Second one is true!"
+else:
+	print "False!"
+
+classSize = 19;
+question = "How big is your class?";
+response = raw_input("> ")
+# Remember, raw input is always collected as a string
+response_as_an_int = int(response)
+if(response_as_an_int != classSize):
+	print "You must not be in the Sept class."
+else:
+	print "You're with me!"
