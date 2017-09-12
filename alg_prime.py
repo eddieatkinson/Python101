@@ -27,6 +27,10 @@
 
 # Create an array of known primes
 known_primes = [2, 3]
+# not_primes = []
+# def not_primes(n):
+# 	for i in range (4, 10):
+		
 def is_prime(n):
 	total_primes = len(known_primes)
 	for i in range (0, total_primes):
@@ -39,5 +43,5 @@ def is_prime(n):
 			continue
 	known_primes.append(n)
 	return True
-print is_prime(5)
+print is_prime(25)
 
