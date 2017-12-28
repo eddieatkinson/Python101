@@ -27,6 +27,7 @@
 atlanta_teams = [
 	"Falcons",
 	"Braves",
+	"Braves",
 	"Hawks",
 	"Thrashers",
 ]

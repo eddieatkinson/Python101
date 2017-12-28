@@ -6,9 +6,9 @@ for i in range (2520, 300000000, 2520):
 				if j == 20:
 					print i
 					quit()
-				continue
+				else:
+					continue
 
 			else:
 				divisible = False
-				break
-			
+				break		

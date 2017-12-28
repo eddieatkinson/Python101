@@ -1,4 +1,4 @@
-in_list = [1, 3, 4, 3]
+in_list = [1, 3, 3, 3]
 dup_list = in_list[0:]
 dup_list2 = in_list[0:]
 # print dup_list
