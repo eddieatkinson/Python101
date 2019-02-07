@@ -43,5 +43,5 @@ def is_prime(n):
 			continue
 	known_primes.append(n)
 	return True
-print is_prime(25)
+print(is_prime(25))
 
