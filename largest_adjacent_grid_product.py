@@ -25,11 +25,16 @@ grid = """08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08
 
 # What is the greatest product of four adjacent numbers in the same direction (up, down, left, right, or diagonally) in the 20×20 grid?
 
-def change_string_to_list_of_lists(string_input):
+def change_string_to_list_of_lists_of_numbers(string_input):
   list_of_each_line = string_input.split('\n')
   list_of_lists = []
   for row in list_of_each_line:
     list_of_lists.append(row.split(' '))
+  length_of_list_of_lists = len(list_of_lists)
+  for i in range(length_of_list_of_lists):
+    length_of_individual_list = len(list_of_lists[i])
+    for j in range(length_of_individual_list):
+      list_of_lists[i][j] = int(list_of_lists[i][j])
   return list_of_lists
 
 def find_greatest_row_products_of_n(n):
@@ -41,4 +46,4 @@ def find__greatest_column_products_of_n(n):
 def find_greatest_diagonal_products_of_n(n):
   return
 
-print(change_string_to_list_of_lists(grid))
+print(change_string_to_list_of_lists_of_numbers(grid))
