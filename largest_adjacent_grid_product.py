@@ -37,13 +37,70 @@ def change_string_to_list_of_lists_of_numbers(string_input):
       list_of_lists[i][j] = int(list_of_lists[i][j])
   return list_of_lists
 
-def find_greatest_row_products_of_n(n):
-  return
+def find_greatest_row_products_of_n(n, list_of_lists):
+  greatest_row_product = 0
+  length_of_list_of_lists = len(list_of_lists)
+  for i in range(length_of_list_of_lists):
+    length_of_individual_list = len(list_of_lists[i])
+    for j in range(length_of_individual_list - n):
+      product = 1
+      for k in range(n):
+        product = list_of_lists[i][j + k] * product
+      if product > greatest_row_product:
+        greatest_row_product = product
+  return greatest_row_product
 
-def find__greatest_column_products_of_n(n):
-  return
+def find__greatest_column_products_of_n(n, list_of_lists):
+  greatest_column_product = 0
+  length_of_list_of_lists = len(list_of_lists)
+  for i in range(length_of_list_of_lists - n):
+    length_of_individual_list = len(list_of_lists[i])
+    for j in range(length_of_individual_list):
+      product = 1
+      for k in range(n):
+        product = list_of_lists[i + k][j] * product
+      if product > greatest_column_product:
+        greatest_column_product = product
+  return greatest_column_product
 
-def find_greatest_diagonal_products_of_n(n):
-  return
+def find_greatest_diagonal_left_to_right_products_of_n(n, list_of_lists):
+  greatest_diagonal_left_to_right_product = 0
+  length_of_list_of_lists = len(list_of_lists)
+  for i in range(length_of_list_of_lists - n):
+    length_of_individual_list = len(list_of_lists[i])
+    for j in range(length_of_individual_list - n):
+      product = 1
+      for k in range(n):
+        product = list_of_lists[i + k][j + k] * product
+      if product > greatest_diagonal_left_to_right_product:
+        greatest_diagonal_left_to_right_product = product
+  return greatest_diagonal_left_to_right_product
 
-print(change_string_to_list_of_lists_of_numbers(grid))
+def find_greatest_diagonal_right_to_left_products_of_n(n, list_of_lists):
+  greatest_diagonal_right_to_left_product = 0
+  length_of_list_of_lists = len(list_of_lists)
+  for i in range(n, length_of_list_of_lists):
+    length_of_individual_list = len(list_of_lists[i])
+    for j in range(length_of_individual_list):
+      product = 1
+      for k in range(n):
+        product = list_of_lists[i - k][j - k] * product
+      if product > greatest_diagonal_right_to_left_product:
+        greatest_diagonal_right_to_left_product = product
+  return greatest_diagonal_right_to_left_product
+
+def find_greatest_adjacent_product(n, string_grid):
+  list_of_lists = change_string_to_list_of_lists_of_numbers(grid)
+  greatest_adjacent_product = find_greatest_row_products_of_n(n, list_of_lists)
+  greatest_column_product = find__greatest_column_products_of_n(n, list_of_lists)
+  greatest_diagonal_left_to_right_product = find_greatest_diagonal_left_to_right_products_of_n(n, list_of_lists)
+  greatest_diagonal_right_to_left_product = find_greatest_diagonal_right_to_left_products_of_n(n, list_of_lists)
+  if greatest_column_product > greatest_adjacent_product:
+    greatest_adjacent_product = greatest_column_product
+  if greatest_diagonal_left_to_right_product > greatest_adjacent_product:
+    greatest_adjacent_product = greatest_diagonal_left_to_right_product
+  if greatest_diagonal_right_to_left_product > greatest_adjacent_product:
+    greatest_adjacent_product = greatest_diagonal_right_to_left_product 
+  return greatest_adjacent_product
+
+print(find_greatest_adjacent_product(4, grid))
