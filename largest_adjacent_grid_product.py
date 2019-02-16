@@ -79,12 +79,12 @@ def find_greatest_diagonal_left_to_right_products_of_n(n, list_of_lists):
 def find_greatest_diagonal_right_to_left_products_of_n(n, list_of_lists):
   greatest_diagonal_right_to_left_product = 0
   length_of_list_of_lists = len(list_of_lists)
-  for i in range(n, length_of_list_of_lists):
+  for i in range(length_of_list_of_lists - n):
     length_of_individual_list = len(list_of_lists[i])
-    for j in range(length_of_individual_list):
+    for j in range(n, length_of_individual_list):
       product = 1
       for k in range(n):
-        product = list_of_lists[i - k][j - k] * product
+        product = list_of_lists[i + k][j - k] * product
       if product > greatest_diagonal_right_to_left_product:
         greatest_diagonal_right_to_left_product = product
   return greatest_diagonal_right_to_left_product
