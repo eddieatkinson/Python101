@@ -5,8 +5,6 @@ names = f.read()
 names_without_first_and_last = names[1:-1]
 names_as_list = names_without_first_and_last.split('","')
 names_as_list.sort()
-# sorted_names_as_list = names_as_list.sort()
-# names_as_list = ['Eddie', 'Marcus', 'Jennifer']
 number_of_names = len(names_as_list)
 
 def get_name_score(i):
@@ -16,9 +14,6 @@ def get_name_score(i):
     letter_value = lower_case_alphabet.index(letter) + 1
     letter_value_sum += letter_value
   name_score = name_number_in_list * letter_value_sum
-  # print(name_number_in_list)
-  # print(names_as_list[i])
-  # print(name_score)
   return name_score
 
 def get_total_of_all_name_scores(length):
