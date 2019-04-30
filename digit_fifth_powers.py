@@ -1,6 +1,6 @@
 def find_sum_of_digit_n_powers(n):
   sum_of_everything_that_qualifies = 0
-  for i in range(2, 1000000):
+  for i in range(2, n * (9**n) + 1):
     i_as_string = str(i)
     sum_of_digits = 0
     for each_digit in i_as_string:
