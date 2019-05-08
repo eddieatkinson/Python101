@@ -27,7 +27,6 @@ number_of_triangle_words = 0
 for i in range(len(words_as_list)):
   if get_word_score(i) in list_of_tri:
     number_of_triangle_words += 1
-  print(get_word_score(i))
 
 print(number_of_triangle_words)
 
